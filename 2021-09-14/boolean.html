@@ -60,7 +60,33 @@
       prompt('당신의 나이는?'); // 경고창 대신에 prompt 창이 떠서 사용자로부터 값을 받아 올 있음. 취소를 누르면 아무일도 일어나지 않음
       alert(prompt('당신의 나이는?')); // prompt 값이 alert창에 나타남
 
+      // 논리 연산자
+      // && (AND) ~ 이고
+      id = prompt('아이디를 입력해주세요.');
+      password = prompt('비밀번호를 입력해주세요.');
+      if(id=='egoing' && password=='111111'){
+          alert('인증 했습니다.');
+      } else {
+          alert('인증에 실패 했습니다.');
+      }
 
+      // || (OR) ~ 이거나
+      id = prompt('아이디를 입력해주세요.');
+      password = prompt('비밀번호를 입력해주세요.');
+      if((id==='egoing' || id==='k8805' || id==='sorialgi') && password==='111111'){
+          alert('인증 했습니다.');
+      } else {
+          alert('인증에 실패 했습니다.');
+      }
+
+      // != (NOT) 부정
+      if(!true && !true){
+        alert(1);
+      }
+
+      // boolean 대체제
+      // if(0) => '0'은 false, if('') => 빈문자열 false, if(undefined) => false
+      // if(1) => '1'은 true
 
 
     </script>

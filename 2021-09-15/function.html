@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+  <script type="text/javascript">
+    // 함수(function) - 하나의 로직을 재실행 할 수 있도록 하는 것으로 코드의 재사용성을 높여준다.
+    /*
+      function 함수명 ( [인자 .... [,인자]]){
+      코드
+      return 반환값
+    }
+      */
+
+    function numbering() {
+      let i = 0;
+      while (1 < 10) {
+        document.write(i);
+        i++;
+      }
+    }
+
+    // 함수에서 가장 중요한 것 재사용성!
+    numbering(); // ()는 함수를 호출하게 해줌
+    numbering(); // ()는 함수를 호출하게 해줌
+    numbering(); // ()는 함수를 호출하게 해줌
+
+    // 함수의 효용 - 함수가 없다면?
+    // 반복문도 재사용에 용이하지만 함수가 효용적으로 더욱 좋음
+    // 프로그래밍 -> 재사용성, 유지보수의 용이, 가독성 이러한 것들을 극복하는 프로그래밍이 좋은 프로그래밍
+
+    // 함수의 입력과 출력
+    // 출력 return
+
+    // 첫 리턴 실행 후 함수가 종료되기 때문에 egoing 출력
+    function get_member1() {
+      return 'egoing';
+      return 'shin';
+      return 'myeongseop';
+    }
+
+    function get_member2() {
+      return 'k8805';
+    }
+
+    alert(get_member1());
+    alert(get_member2());
+
+    // 입력 arg 입력값에 따라 출력값이 연산되어 나옴
+    function get_argument(arg) { // arg -> 매개변수, parameter
+      return arg;
+    }
+
+    alert(get_argument(2)); // 인자
+    alert(get_argument(1));
+
+    // 함수의 다른 방법
+    var numbering = function() {
+      i = 0;
+      while (i < 10) {
+        document.write(i);
+        i += 1;
+      }
+    }
+
+    numbering();
+
+  </script>
+</body>
+
+</html>

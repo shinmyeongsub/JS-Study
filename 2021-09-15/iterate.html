@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      // 반복문 : loop , iterate
+      // 컴퓨터에게 반복적이고 단순한 작업을 시킴
+      // while, for
+      var i = 0;
+      while(true){ // 무한루프
+        document.write("Coding everybody <br/>");
+      }
+
+      while(i<10){ // 조건을 넣어 괄호 안의 값이 false가 되면 종료
+        document.write("Coding everybody "+i+"<br/>");
+        i = i+1;
+      }
+
+
+      // for
+      for(var i=0; i<10; i++){ // i = i+1; 과 i++ 은 같은 의미
+        document.write("Coding everybody "+i+"<br/>");
+      }
+
+      //  반복문의 효용
+      document.write("coding everybody <br/>");
+
+      // 반복문의 제어
+      // break -  반복작업을 중단하고 싶을 때 사용
+      // continue - 그 순간에만 종료 시키고 진행
+
+      // 0부터 9까지 변수 i에 순차적으로 값을 할당
+      for(var i = 0; i < 10; i++){
+          // 0부터 9까지의 변수를 j의 값에 순차적으로 할당
+          for(var j = 0; j < 10; j++){
+              // i와 j의 값을 더한 후에 출력
+              // String은 숫자인 i와 j의 데이터 타입을 문자로 형태를 변환하는 명령이다.
+              // String()을 제거하고 실행해보면 의미가 좀 더 분명하게 드러날 것이다.
+              document.write(String(i)+String(j)+'<br />'); // 문자열 사이의 숫자는 문자열로 나옴
+          }
+      }
+
+    </script>
+  </body>
+</html>
