@@ -6,8 +6,16 @@
   </head>
   <body>
     <script type="text/javascript">
-    //UI : User Interpace
-    //API : Application Programming Interpace
+      // 전역 객체 (global object)
+      function func(){
+        alert('Hello?');
+      }
+
+      func();
+
+      // window -> 전역 객체
+      window.func();
+
     </script>
   </body>
 </html>
