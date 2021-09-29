@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      // 함수의 호출
+      // function.apply와 function.call
+      function sum(arg1, arg2){
+        return arg1+arg2;
+      }
+
+      // apply, call -> 같은 결과를 보여주지만 쓰임새가 다르다
+      sum.apply(null,[1,2]); // 첫번째 인자가 null을 넣어야 한다면 쓰지 않는게 좋다.
+
+      o1 = {val1:1, val2:2, val3:3}
+      o2 = {v1:10, v2:50, v3:100, v4:25}
+      function sum(){
+          var _sum = 0;
+          for(name in this){
+              _sum += this[name];
+          }
+          return _sum;
+      }
+      alert(sum.apply(o1)) // 6
+      alert(sum.apply(o2)) // 185
+      
+    </script>
+  </body>
+</html>
