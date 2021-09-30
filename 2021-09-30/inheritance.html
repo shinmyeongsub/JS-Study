@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      // 상속 : 객체의 로직을 그대로 물려 받은 또 다른 객체를 만들 수 있는 기능, 기존의 로직을 수정하고 변경하여 변경된 새로운 객체를 만들 수 있음
+
+      function Person(name){
+        this.name = name;
+      }
+
+      // javascript -> prototype based language
+      Person.prototype.name=null;
+      Person.prototype.introduce = function(){
+        return 'My name is '+this.name;
+      }
+
+      var p1 = new Programmer('egoing');
+      document.write(p1.introduce()+"<br />");
+
+      function Person(name){
+          this.name = name;
+      }
+      Person.prototype.name=null;
+      Person.prototype.introduce = function(){
+          return 'My name is '+this.name;
+      }
+
+      function Programmer(name){
+          this.name = name;
+      }
+      Programmer.prototype = new Person();
+
+      var p1 = new Programmer('egoing');
+      document.write(p1.introduce()+"<br />");
+
+      function Person(name){
+      this.name = name;
+      }
+      Person.prototype.name=null;
+      Person.prototype.introduce = function(){
+          return 'My name is '+this.name;
+      }
+
+      function Programmer(name){
+          this.name = name;
+      }
+      Programmer.prototype = new Person();
+      Programmer.prototype.coding = function(){
+          return "hello world";
+      }
+
+      var p1 = new Programmer('egoing');
+      document.write(p1.introduce()+"<br />");
+      document.write(p1.coding()+"<br />");
+
+    </script>
+  </body>
+</html>

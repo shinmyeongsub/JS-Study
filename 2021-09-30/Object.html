@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      // Object : 객체의 가장 기본적인 형태를 가지고 있는 객체
+      // 다시 말해서 아무것도 상속받지 않는 순수한 객체
+
+      // Object.keys()
+      var arr = ["a","b","c"];
+      console.log('Object.keys(arr)',Object.keys(arr));
+      // Object.keys(arr) ["a","b","c"]
+
+      // Object.prototype.toString()
+      var o = new Object();
+      console.log('o.toString()', o.toString());
+
+      var a = new Array(1,2,3);
+      console.log('a.toString()', a.toString());
+
+
+      Object.prototype.contain = function(neddle) {
+          for(var name in this){
+              if(this[name] === neddle){
+                  return true;
+              }
+          }
+          return false;
+      }
+      var o = {'name':'egoing', 'city':'seoul'}
+      console.log(o.contain('egoing'));
+      var a = ['egoing','leezche','grapittie'];
+      console.log(a.contain('leezche'));
+
+      for(var name in o){
+        if(o.hasOwnProperty(name)){
+          console.log(name);
+        }
+      }
+
+
+    </script>
+  </body>
+</html>

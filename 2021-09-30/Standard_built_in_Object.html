@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+
+      // 표준 내장 객체 (Standard Built-in Object)
+      // 자바스크립트가 기본적으로 가지고 있는 객체
+      // Object
+      // Function
+      // Array
+      // String
+      // Boolean
+      // Number
+      // Math
+      // Date
+      // RegExp
+
+      var arr = new Array('seoul','new york','ladarkh','pusan', 'Tsukuba');
+      function getRandomValueFromArray(haystack){
+        // floor -> 정수로 변환
+        // random -> 0 ~ 1 사이의 소수 출력
+          var index = Math.floor(haystack.length*Math.random());
+          return haystack[index];
+      }
+      console.log(getRandomValueFromArray(arr));
+
+      Array.prototype.rand = function(){
+          var index = Math.floor(this.length*Math.random());
+          return this[index];
+      }
+      var arr = new Array('seoul','new york','ladarkh','pusan', 'Tsukuba');
+      console.log(arr.rand());
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      // 복제 : 현실의 사물과 다르게 전지화된 시스템 위의 데이터를 복제 하는데는 비용이 거의 들지 않음
+      // 소프트웨어를 기존 사업과 구분하는 가장 큰 특징
+      var a = 1; // 원시 데이터 타입일 때
+      var b = a;
+      b = 2;
+      console.log(a);
+
+      // 참조 -> 데이터가 객체인 경우 데이터를 복사하지 않고 같은 주소를 참조함.
+      var a = {'id':1};
+      var b = a;
+      b.id = 2;
+      console.log(a.id); // 2
+
+    </script>
+  </body>
+</html>
