@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+  <ul>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li id="active">JavaScript</li>
+  </ul>
+
+  <a id="anchor" href="http://opentutorials.org">opentutorials</a>
+  <ul>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li id="list">JavaScript</li>
+  </ul>
+  <input type="button" id="button" value="button" />
+    <script type="text/javascript">
+
+      // HTMLElement : getElement* 메소드를 통해서 원하는 객체를 조회했다면 이 객체들을 대상으로 구체적인 작업을 처리해야 한다.
+      // 이를 위해서는 획득한 객체가 무엇인지 알아야 한다.
+      var i = document.getElementById('active');
+      console.log(li.constructor.name); // HTMLLIElement
+      var lis = docuemnt.getElementsByTagName('li');
+      console.log(lis.constructor.name); // HTMLCollection
+
+      var target= document.getElementById('list');
+      console.log(target.constructor.name); // HTMLLIElement
+
+      var target= document.getElementById('anchor');
+      console.log(target.constructor.name); // HTMLAnchorElement
+
+      var target= document.getElementById('button');
+      console.log(target.constructor.name); // HTMLInputElement
+
+    </script>
+  </body>
+</html>

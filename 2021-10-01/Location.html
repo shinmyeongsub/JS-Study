@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      // Location - location 객체는 문서의 주소와 관련된 객체로 Window 객체의 프로퍼티다.
+      // 이 객체를 이용해서 윈도우의 URL을 변경할 수 있고, 문서의 위치와 관련해서 다양한 정보를 얻을 수 있다.
+      alert(locaiton); // 현재 url을 알아내기
+      console.log(location.protocol); // 현재 윈도우의 프로토콜을 알아오기
+      console.log(location.host); // 호스트를 식변
+      console.log(location.port); // 등등...
+
+      // URL 변경하기
+      location.href = "http://egoing.net";
+
+      // reload
+      location.href = location.href;
+      location.reload;
+
+      // 현재 문서에 주소를 변경하고 reload 시킬 수 있음
+    </script>
+  </body>
+</html>

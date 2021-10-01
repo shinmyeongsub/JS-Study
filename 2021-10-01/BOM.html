@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      // BOM (Brower Object Model)
+      // navigator, screen, location, frames, history
+      // 전역객체 (윈도우 객체)
+      // 객체들 중 가장 상위 객체 - 윈도우 객체
+
+      // alert -> 윈도우 내장 함수
+      alert("Hello world");
+      window.alert("Hello wolrd");
+
+    </script>
+
+      <!-- 사용자와 커뮤니케이션 하기 -->
+      <!-- alert - 경고창, 사용자에게 정보를 제공하거나 디버깅의 용도로 많이 사용 -->
+      <input type="button" value="alert" onclick="alert();"/>
+
+      <!-- confirm - Yes, No 로 받아 값을 true 와 false로 리턴 -->
+      <input type="button" value="confirm" onclick="confirm();"/>
+
+      <!-- prompt - 입력 받은 string 값을 리턴 받아 사용 가능 -->
+      <!-- 숫자로 입력해도 문자열로 받습니다. -->
+      <input type="button" value="prompt" onclick="prompt();"/>
+
+  </body>
+</html>

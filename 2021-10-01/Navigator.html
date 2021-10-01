@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+<body>
+  <script type="text/javascript">
+    // 크로스브라우징 (cross browsing)
+    // W3C, ECMA 등등 정의된 규칙(웹 표준)에 따라 Brower를 만듬
+
+    // Navigator 브라우저의 정보를 제공하는 객체. 주로 호환성 문제등을 위해서 사용
+    console.dir(navigator);
+    console.dir(navigator.appName); // 브라우저 앱 이름
+    console.dir(navigator.appVersion); // 브라우저의 버전 의미
+    console.dir(navigator.userAgent); // 브라우저가 서버측으로 전송하는 USER-AGENT HTTP 헤더의 내용
+    console.dir(navigator.platform); // 브라우저가 동작하고 있는 운영체제
+
+    // 기능 테스트
+    if(!object.keys){
+      Object.keys = (function(){
+        'user strict';
+        var hasOwnProperty = Object.prototype.hasOwnProperty;
+        hasDontEnumBug = ! ({toString: null}).propertyIsEnumerable('toString'),
+        dontEnums = [
+        'toString',
+        'toLocaleString',
+        'valueOf',
+        'hasOwnProperty',
+        'isPrototypeOf',
+        'propertyIsEnumerable',
+        'constructor'
+        ],
+        dontEnumsLength = dontEnums.length;
+      })
+    }
+
+  </script>
+</body>
+</html>

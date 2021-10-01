@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+  <ul>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+  </ul>
+
+  <ul>
+    <li>HTML</li>
+    <li class="active" id = "active">CSS</li>
+    <li class="active">JavaScript</li>
+  </ul>
+
+    <script type="text/javascript">
+      // 제어 대상을 찾기
+      var ul = document.getElementsByTagName('ul')[0];
+      var lis = document.getElementsByTagName('li');
+      var lis = document.getElementsByClassName('active');
+      var id_active = document.getElementsById('active');
+
+      // querySelector -> 하나만 선택
+      // querySelectorAll -> 다중 선택
+      var li = document.querySelector('li');
+      li.style.color = 'red';
+      var li = document.querySelector('.active');
+      li.style.color = 'blue';
+
+      for(var i=0; i < lis.length; i++){
+        lis[i].style.color='red';
+      }
+
+
+    </script>
+  </body>
+</html>
