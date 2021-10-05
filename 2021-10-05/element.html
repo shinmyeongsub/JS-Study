@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <ul>
+      <li>html</li>
+      <li>css</li>
+      <li id = "active" class="important current">javaScript</li>
+    </ul>
+    <script type="text/javascript">
+      // Element 객체는 엘리먼트를 추상화한 객체
+      // DOM -> 꼭 HTML 만을 제어하는 것은 아님
+
+      /*
+      식별자
+      문서내에서 특정한 엘리먼트를 식별하기 위한 용도로 사용되는 API
+
+      lement.classList
+      Element.className
+      Element.id
+      Element.tagName
+      */
+
+      console.log(doucment.getElementById('active').tagName);
+
+      var active = document.getElementById('active');
+      console.log(active.id);
+      active.id='deactive';
+      console.log(active.id);
+
+      var active = document.getElementById('active');
+      console.log(active.className);
+
+      /*
+      조회
+      엘리먼트의 하위 엘리먼트를 조회하는 API
+      조회 대상을 제한하는 방법에 대한 것
+
+      Element.getElementsByClassName
+      Element.getElementsByTagName
+      Element.querySelector
+      Element.querySelectorAll
+      */
+
+      var list = document.getElementsByClassName('marked');
+      console.group('document');
+      for(var i=0; i<list.length; i++){
+        console.log(list[i].textContent);
+      }
+      console.groupEnd();
+
+      console.group('active');
+      var active = document.getElementById('active');
+      var list = active.getElementsByClassName('marked');
+      for(var i=0; i<list.length; i++){
+        console.log(list[i].textContent);
+      }
+
+      console.groupEnd();
+
+      /*
+      속성
+      엘리먼트의 속성을 알아내고 변경하는 API
+
+      Element.getAttribute(name)
+      Element.setAttribute(name, value)
+      Element.hasAttribute(name);
+      Element.removeAttribute(name);
+      */
+
+      var target = document.getElementById('target');
+      // attribute 방식
+      target.setAttribute('class', 'important');
+      // property 방식
+      target.className = 'important';
+
+      // Element의 API 를 jQuery에서 사용
+
+      $(".marked","#active").css("background-color","red");
+
+      // .find()
+      $('#active').find('.marked').css("background-color","red");
+
+    </script>
+  </body>
+</html>
