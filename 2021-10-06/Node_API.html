@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <ul id="target">
+      <li>HTML</li>
+      <li>CSS</li>
+      <li id="target">JavaScript</li>
+    </ul>
+    <input type="button" onclick="callAppendChild();" value="appendChild()" />
+    <input type="button" onclick="callInsertBefore();" value="callInsertBefore()" />
+    <script type="text/javascript">
+
+      // 노드의 변경
+      // 노드의 추가
+      // appendChild(child) : 노드의 마지막 자식으로 주어진 엘리먼트 추가
+      // 뒤쪽에 삽입
+      function callAppendChild(){
+        var target = document.getElementById('target');
+        var li = document.createElement('li');
+        var text = document.createTextNode('JavaScript');
+        li.appendChild(text);
+        target.appendChild(li);
+      }
+
+      // insertBefore
+      // 앞쪽에 삽입
+      function callInsertBefore(){
+        var target = document.getElementById('target');
+        var li = document.createElement('li');
+        var text = document.createTextNode('JavaScript');
+        li.appendChild(text);
+        target.insertBefore(li, target.firstChild);
+      }
+
+      // 노드의 제거
+      function callRemoveChild(){
+        var target = document.getElementById('target');
+        target.parentNode.removeChild(target);
+      }
+
+      // 노드 바꾸기
+      function callReplaceCall(){
+        var a = document.createElement('a');
+        a.setAttribute('href', 'http://opentutorials.org/module/904/6701');
+        a.appenChild(document.createTextNode('Web brower JavaScript'));
+
+        var target = document.getElementById('target');
+        target.replaceChild(a,target.firstChild);
+
+      // jQuery 사용 노드 변경
+      // element 추가
+      $('.target').before('<div>before</div>');
+      $('.target').after('<div>after</div>');
+      $('.target').prepend('<div>prepend</div>');
+      $('.target').append('<div>append</div>');
+
+      // element 제거
+      // remove, empty
+
+      // element 전체가 사라짐
+      $('#btn1').click(function(){
+        $('#target1').remove();
+      })
+
+      // 태그는 유지되면서 text만 사라짐
+      // element는 남고 text만 사라짐
+      $('#btn2').click(function(){
+        $('#target2').empty();
+      })
+
+      // 바꾸기 : replaceAll, replaceWith
+      // replaceWith : 재어의 대상을 먼저 지정
+      // replaceAll :  제어 대상은 인자로 설정
+
+      $('#btn1').click(function(){
+        $('<div>replaceAll</div>').replaceAll('#target1');
+      })
+
+      $('#btn2').click(function(){
+        $('<div>replaceWiht</div>').replaceWith($('target2'));
+      })
+
+      // 복사 : clone
+
+      // 문자열로 노드 제어
+
+      // innerHTML :: 자식들
+      function get(){
+        var target = document.getElementById('target');
+        alert(target.innerHTML);
+      }
+      function set(){
+        var target = document.getElementById('target');
+        target.innerHTML = "<li>JavaScript Core</li><li>BOM</li><li>DOM</li>";
+      }
+
+      // outerHTML :: 본인포함
+      function get(){
+        var target = document.getElementById('target');
+        alert(target.outerHTML);
+      }
+      function set(){
+        var target = document.getElementById('target');
+        target.outerHTML = "<li>JavaScript Core</li><li>BOM</li><li>DOM</li>";
+      }
+
+      // insertAdjacentHTML
+      // target.insertAdjacentHTML('beforebeign','<h1>Client Side</h1>');
+
+      }
+    </script>
+  </body>
+</html>
