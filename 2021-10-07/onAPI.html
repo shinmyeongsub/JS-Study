@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <input type="button" id="pure" value="pure"/>
+    <input type="button" id="jquery" value="jquery"/>
+    <script type="text/javascript">
+      // 순수하게 구현했을 때
+      var target = document.getElementById('pure');
+      if(target.addEventListener){
+        target.addEventListener('click', function(event){
+          alert('pure');
+        });
+      }else{
+        target.attachEvent('onclick',function(event){
+          alert('pure');
+        });
+      }
+
+      // jquery 사용
+      $('#jquery').on('click',function(event){
+        alert('jQuery');
+      })
+
+      // on API
+      // .on( events [selector],[data],handler(eventObject))
+      // 두번째 인자 - 필터링
+      $('ul').on('click','a,li',function(event){
+        console.log(this.tagName);
+      })
+
+      // 다중 바인딩
+      // 한번에 두개의 event를 적용 가능
+      $('#target').on('focus blur',funcion(e){
+        $('#satus').html(e.type);
+      })
+
+      var handler = function(e){
+        $('#status').html(e.type);
+      }
+
+      $('#target').on(
+        {
+          'focus' : handler,
+          'blur' : handler
+        }
+      )
+
+      // 이벤트 제거
+      $('#remove').on('click',function(e){
+        $('#target').off('focus');
+      })
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <input type="button" id="pure" value="pure"/>
+    <input type="button" id="jquery" value="jquery"/>
+    <script type="text/javascript">
+      // 순수하게 구현했을 때
+      var target = document.getElementById('pure');
+      if(target.addEventListener){
+        target.addEventListener('click', function(event){
+          alert('pure');
+        });
+      }else{
+        target.attachEvent('onclick',function(event){
+          alert('pure');
+        });
+      }
+
+      // jquery 사용
+      $('#jquery').on('click',function(event){
+        alert('jQuery');
+      })
+    </script>
+  </body>
+</html>

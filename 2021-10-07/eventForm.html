@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <form id="target" action="result.html" >
+      <label for="name">name</label><input id="name" type="name" />
+      <input type="submit">
+    </form>
+    <p id="result"></p>
+    <input id="target" type="name"/>
+    <script type="text/javascript">
+      // form 폼 - 사용자가 입력한 정보를 html form으로 넘김
+      // submit -  폼의 정보를 서버로 전송하는 명령인 submit으로 넘김
+      var t = document.getElementById('target');
+      t.addEventListener('submit', function(event){
+        if(document.getElementById('name').value.length === 0){
+          alert('Name 필드의 값이 누락 되었습니다.');
+          event.preventDefault();
+        }
+      })
+
+      // change - 폼 컨트롤의 값이 변경 되었을 때 발생하는 이벤트
+      // input(text,radio,checkbox),textarea,select 태그에 적용
+      var t = document.getElementById('target');
+      t.addEventListener('change', function(event){
+        document.getElementById('result').innerHTML = event.target.value;
+      });
+
+      // blur, focus
+      var t = document.getElementById('target');
+      t.addEventListener('blur', function(event){
+        alert('blur');
+      });
+      t.addEventListener('focus', function(event){
+        alert('focus');
+      });
+    </script>
+  </body>
+</html>

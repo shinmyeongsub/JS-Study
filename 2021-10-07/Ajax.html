@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <p>time : <span id="time"></span></p>
+    <input type="button" id="execute" value = "execute" />
+    <script type="text/javascript">
+      // Ajax - Asynchronous JavaScript and XML
+      // 웹브라우저는 굉장히 정적이 시스템이었지만 이를 동적 작동을 하기 위해 사용
+
+      // XMLHttpRequest
+      document.querySeletor('input').addEventListener('click',function(event){
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET','./time.php');
+        xhr.onreadystatechange = function(){
+          if(xhr.readyState === 4 && xhr.status === 200){
+            document.querySeletor('#time').innerHTML = xhr.responseText;
+          }
+        }
+        xhr.send();
+      });
+    </script>
+  </body>
+</html>

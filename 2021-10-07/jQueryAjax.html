@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+<body>
+  <script type="text/javascript">
+    // jQuery.ajax([settings])
+    // data , dataType, success, type
+    $('#execute').click(()=>{
+      $.ajax([
+      url:'./time2.php',
+      type:'post',
+      data:$('form').serialize(),
+      success:function(data){
+        $('#time').text(data);
+      }
+      ])
+    })
+
+    // JSON 처리
+    $('#execute').click(function(){
+      $.ajax({
+        url:'/time3.php',
+        dataType:'json',
+        success:function(data){
+          var str='';
+          for(var name in data){
+            str += '<li>' + data[name] + '</li>';
+          }
+          $('#timezones').html('<ul>'+str+'</ul>');
+        }
+      })
+    })
+
+  </script>
+</body>
+</html>
